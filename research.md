@@ -15,3 +15,4 @@ Broadly speaking, I work on Programming Languages and Systems. I am especially i
 
 I hold a Ph.D. from [USI Lugano](http://www.inf.usi.ch). I did research internships at [Mozilla Research](https://research.mozilla.org) and Oracle Labs, and was a guest of the [SSW institute](http://ssw.jku.at) of JKU Linz. Before that, I earned a M.Sc. at the [University of Pisa](http://calvados.di.unipi.it/paragroup/people/) working on high-performance parallel computing.
 
+An updated list of my publications can be found on [Google Scholar](https://scholar.google.com/citations?user=AR2pK8QAAAAJ).
