@@ -33,6 +33,6 @@ The following are very useful links for perspective students interested in worki
 
 * Animesh Trivedi's _excellent_ advice on [writing a survey](https://animeshtrivedi.github.io/lit-study/).
 
-* Animesh Trivedi's _excellent_ advice on [working with him](https://animeshtrivedi.github.io/lit-study/) -- the _full_ content of his advice applies to me as well.
+* Animesh Trivedi's _excellent_ advice on [working with him](https://animeshtrivedi.github.io/advice/) -- the _full_ content of his advice applies to me as well.
 
 * Simon Peyton Jones' very useful [resources about research](https://simon.peytonjones.org/research-skills/).
