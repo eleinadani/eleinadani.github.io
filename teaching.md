@@ -8,7 +8,7 @@ Currently, I am teaching the following courses:
 
 * [Systems Seminar](https://studiegids.vu.nl/en/courses/2024-2025/XM_0122#/). M.Sc. @ VU Amsterdam
 
-* [Virtual Machine Design and Implementation](https://research.tue.nl/en/courses/language-virtual-machines-design-and-implementation). M.Sc. @ TU Eindhoven
+* [Language VMs Design and Implementation](https://research.tue.nl/en/courses/language-virtual-machines-design-and-implementation). M.Sc. @ TU Eindhoven
 
 * [Advanced Network Programming](https://studiegids.vu.nl/en/Bachelor/2024-2025/computer-science/XB_0048#/). B.Sc. @ VU Amsterdam
 
