@@ -18,9 +18,9 @@ Currently, I am teaching the following courses:
 
 I am always looking for motivated students who share my research interests, and who enjoy developing practical tools, conducting experimental evaluations, and making significant contributions to open-source projects.
 
-At VU Amsterdam, I regularly offer Bachelor and Master thesis projects. In addition, I offer research projects ([XM_405088](https://studiegids.vu.nl/EN/courses/2024-2025/XM_405088#/), [XM_0129](https://studiegids.vu.nl/EN/courses/2024-2025/XM_0129#/) or [XM_0130](https://studiegids.vu.nl/en/Master/2024-2025/computer-science-joint-degree/XM_0130#/)) for highly-motivated students. At TU/e, I normally supervise M.Sc. thesis projects (but no B.Sc.)
+At VU Amsterdam, I regularly offer Bachelor and Master thesis projects. In addition, I offer literature studies ([XM_0131](https://studiegids.vu.nl/en/Master/2024-2025/computer-science-joint-degree/XM_0131#/)) and research projects ([XM_405088](https://studiegids.vu.nl/EN/courses/2024-2025/XM_405088#/), [XM_0129](https://studiegids.vu.nl/EN/courses/2024-2025/XM_0129#/) or [XM_0130](https://studiegids.vu.nl/en/Master/2024-2025/computer-science-joint-degree/XM_0130#/)) for highly-motivated students. At TU/e, I normally supervise M.Sc. thesis projects (but no B.Sc.)
 
-An updated list of the research projects I am offering [can be found here](https://docs.google.com/document/d/1k-wTpn1JyAtVg72pIrsOZnGdjrWzEz_CIExGq_6RCLI/edit). If you are enrolled at VU Amsterdam or TU/e and are interested in doing a research project under my supervision, feel free to reach out.
+An updated list of the topics and research projects I am offering [can be found here](projects). If you are enrolled at VU Amsterdam or TU/e and are interested in doing a research project under my supervision, feel free to reach out.
 
 
 ---
