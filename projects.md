@@ -8,7 +8,7 @@ My research interests are at the intersection of **Systems** and **Language runt
 
 ### Recommended background knowledge.
 
-All offered projects are challenging, require good systems programming and knowledge. I assume that at the Bachelor’s level you have taken (or you are familiar with some of the topics of) **Computer Organization**, **Advanced Network Programming**, **Compiler Construction**, **Operating Systems**, and **Concurrency and Multithreading**. At the Master’s level, you have taken/or you are familiar with at least some of **Programming Large-Scale Parallel Systems**,  **Systems Seminar**, **Programming Multi-core and Many-core Systems**. Very good knowledge of Java, C, C++, Rust, or comparable languages is strongly recommended.
+All offered projects are challenging and require good systems programming and knowledge. I assume that at the Bachelor’s level you have taken (or you are familiar with some of the topics of) **Computer Organization**, **Advanced Network Programming**, **Compiler Construction**, **Operating Systems**, and **Concurrency and Multithreading**. At the Master’s level, you have taken/or you are familiar with at least some of **Programming Large-Scale Parallel Systems**,  **Systems Seminar**, **Programming Multi-core and Many-core Systems**. Very good knowledge of Java, C, C++, Rust, or comparable languages is strongly recommended.
 
 
 ### MSc-level projects.
