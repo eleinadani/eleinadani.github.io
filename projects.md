@@ -36,7 +36,6 @@ The projects below can either be a MSc thesis (typically with a literature study
 
 * **[Human readable dump of GraalVM native image binary files].** The GraalVM native image framework can be used to (ahead-of-time) compile Java applications to highly-optimized binary files, with great startup performance. In this project we want to develop a tool to disassemble GraalVM native image binary files, making it possible to reverse-engineer their content producing (where possible) a human-readable output. Related work [(1)](https://www.graalvm.org/22.0/reference-manual/native-image/).
 
-* **[Snapshot-repeat compilation caching].** Advanced compiler optimizations are often implemented with Graph traversal and Graph rewriting algorithms, converting a Graph data structure (IR) from after applying each optimization. Given the often complex nature of such graphs, a typical compiler would always perform all optimizations on all graphs, without caching. In this project we want to explore the usage of alternative data structures that would allow caching of a compiler IRs. In this way, the overall runtime cost of JIT compilation would be significantly reduced, as the JIT compiler could re-use graphs from previous compilations. Related work [(1)](https://github.com/oracle/graal/).
 
 * **[Combining CRIU and GraalVM native-image].** GraalVM native image is an open-source language technology that can be used to create optimized, cloud-ready binary executables for Java. By leveraging Ahead-of-time compilation of Java code, GraalVM native images can significantly reduce applications’ startup time, leading to reduced cold starts in Cloud deployments such as AWS Lambda. CRIU is an emerging technology provided by the Linux kernel aimed at the same goal: minimize applications startup time. Unlike GraalVM native image, CRIU leverages “user-space” snapshotting. In this project we want to explore how the two technologies can be combined in order to minimize even further the startup latency of Cloud applications. Related work [(1)](https://criu.org/Main_Page).
 
@@ -55,15 +54,10 @@ The projects below can either be a MSc thesis (typically with a literature study
 * **[GPU-based garbage collection acceleration].** Google V8 or the Java Virtual Machine implement very advanced Garbage Collection techniques. Most of such GCs have a parallel, multithreaded implementation. In this project, we want to study how GPUs can be used to speed-up Garbage Collection instead of using multiple threads. _This project will be co-supervised with Dr Juan Fumero, Univ.Manchester (UK)_
 
 
-
 ### BSc-level projects.
 Depending on the topic, most of them can be extended to more challenging MSc-level projects.
 
-* **[Data access pattern performance impact on Apache Arrow].** In this project we want to answer and understand a simple question: does the order in which we access large data files stored in the Apache Arrow format have an impact on performance? And, if so, can the application and/or the language VM optimize the way data is accessed to improve performance? Related work [(1)](https://arrow.apache.org/).
-
-* **[DPDK bindings for Node.js].** The DPDK user-space networking stack is the state-of-the-art solution for high-performance networking. Unfortunately, using DPDK from high-level programming languages such as Python or JavaScript is not always easy. In this project we want to develop Node.js _native_ bindings for the DPDK library, so to enable high-performance netowking in Node.js. Such bindings already exist for other languages (e.g. Go); in this project you will implement them for Node.js. Related work [(1)](https://github.com/DPDK/dpdk) [(2)](https://github.com/yerden/go-dpdk).
-
-* **[Performance analysis of Scatter/gather NICs in Java or Node.js].** Modern NICs with scatter/gather capabilities are often found in commodity hardware. Programming languages or frameworks used to write networking applications such as Node.js or Java (NIO) feature explicit APIs to access the scatter/gather capabilities of a NIC. However, little is understood of the actual performance of using such NICs from a langauge VM like the JVM or V8. In this project we want to study and characterize the performance of networking applications developed using such languages on modern scatter/gather NICs. Related work [(1)](https://howtodoinjava.com/java/nio/nio-scatter-gather-vectored-io/).
+* **[Data access pattern performance impact on Apache Arrow].** In this project we want to answer and understand a simple question: does the order in which we access large datasets stored in the Apache Arrow format have an impact on performance? And, if so, can the application and/or the language VM optimize the way data is accessed to improve performance? Related work [(1)](https://arrow.apache.org/).
 
 * **[Performance analysis of SIMD support in WebAssembly].** SIMD instructions are at the core of modern data processing. For example, several data ingestion operations (e.g., importing data from a CSV file) requires UTF-8 validation: the input data needs to be analyzed (one character at a time) to ensure that the input text is valid. Parallel execution techniques can be employed to speed-up the validation of large text files. In this project, we want to explore the performance of existing WebAssembly runtimes in the context of SIMD execution, looking at common operations such as e.g. UTF-8 validation. The goal of the project is to implement multiple SIMD-based data processing  techniques targeting WebAssembly (either in WebAssembly itself, or by leveraging emscripten or alternative WASM compilers), to assess the current performance of WebAssembly in such Data-parallel operations. Related work [(1)](https://github.com/WebAssembly/simd/blob/main/proposals/simd/SIMD.md) [(2)](https://arxiv.org/abs/2010.03090).
 
@@ -75,9 +69,6 @@ Depending on the topic, most of them can be extended to more challenging MSc-lev
 
 * **[Performance evaluation of popular binary and textual encoding formats].** Data is often encoded using binary formats such as Parquet, Cap’n Proto, Protocol Buffers, Arrow, FlatBuffers etc. In this project, we want to build a comprehensive performance evaluation suite (i.e., a benchmark) to compare the performance of popular encoding formats on popular programming languages such as Java, JavaScript, Python, C/C++ and Rust.
 
-* **[Energy-aware JIT compilation].** Just-in-time (JIT) compilation is often one of the most energy-intensive operations performed by modern language runtimes such as the Java VM and Google’s V8 JavaScript engine. Despite the importance of JIT compilation in modern programming languages, very little is known about the energy consumption of JIT compilers. In this project we want to analyze the performance and energy consumption of modern JIT compilers [POW]. The goal of this project is to enable fine-grained power consumption measurements in a language VM, allowing one to understand the energy costs of individual compiler operations and optimizations (e.g., “how expensive is inlining?”, “does energy consumption grow with the number of methods being compiled?”, etc).
-
-* **[Performance evaluation of the new CPython JIT compiler].** The CPython engine is the most popular language VM for Python. In recent weeks, the engine was finally extended with a JIT compiler. In this project, we want to assess the performance impact of the new JIT, and want to understand what its properties and limitations are. Related: [(1)](https://github.com/python/cpython/pull/113465).
 
 
 #### Literature studies.
@@ -87,7 +78,7 @@ Literature studies are often paired with a MSc thesis. In exceptional cases (e.g
 
 #### Past projects.
 
-These project have been completed and are no longer offered. If you find the topic very interesting, I am happy to discuss about possible follow-up projects on the same topics.
+These project have been completed and are no longer offered. If you find the topic very interesting, I am happy to discuss about possible follow-up projects on the same (or related) topic.
 
 * **[Compressed strings in a language VM].** Modern language VMs such as Google V8 or the Java Virtual Machine (JVM) represent in-memory strings using advanced runtime techniques such as Ropes. In this project we want to investigate if/how compression algorithms can be used in the context of language VMs to reduce memory consumption for large in-memory strings without negative performance impacts. Related work [(1)](https://www.cs.tufts.edu/comp/150FP/archive/hans-boehm/ropes.pdf).
 
@@ -95,5 +86,7 @@ These project have been completed and are no longer offered. If you find the top
 
 * **[Binary layout performance impact].** The way an executable file is stored on disk has a potential impact on the application’s startup performance. For example, large binary files might result in hundreds of page faults depending on the order in which functions are declared and executed. In this project we want to develop automatic compiler-driven techniques to optimize the layout of binary files with the goal of improving application startup.
 
-
+* **[DPDK bindings for Node.js].** The DPDK user-space networking stack is the state-of-the-art solution for high-performance networking. Unfortunately, using DPDK from high-level programming languages such as Python or JavaScript is not always easy. In this project we want to develop Node.js _native_ bindings for the DPDK library, so to enable high-performance netowking in Node.js. Such bindings already exist for other languages (e.g. Go); in this project you will implement them for Node.js. Related work [(1)](https://github.com/DPDK/dpdk) [(2)](https://github.com/yerden/go-dpdk).
 _
+
+* **[Performance evaluation of the new CPython JIT compiler].** The CPython engine is the most popular language VM for Python. In recent weeks, the engine was finally extended with a JIT compiler. In this project, we want to assess the performance impact of the new JIT, and want to understand what its properties and limitations are. Related: [(1)](https://github.com/python/cpython/pull/113465).
