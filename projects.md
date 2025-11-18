@@ -53,6 +53,7 @@ _VMs and compilers_
 
 * **[GPU-assisted compilation using the Graal compiler].** Graal’s extensible design allows exploring offloading parts of compilation to accelerators. This project investigates how certain compiler passes (e.g., SSA construction or data-flow analysis) could be parallelized or accelerated using a GPU-based backend.
 
+* **[Combining CRIU and GraalVM native-image].** GraalVM native image is an open-source language technology that can be used to create optimized, cloud-ready binary executables for Java. By leveraging Ahead-of-time compilation of Java code, GraalVM native images can significantly reduce applications’ startup time, leading to reduced cold starts in Cloud deployments such as AWS Lambda. CRIU is an emerging technology provided by the Linux kernel aimed at the same goal: minimize applications startup time. Unlike GraalVM native image, CRIU leverages “user-space” snapshotting. In this project we want to explore how the two technologies can be combined in order to minimize even further the startup latency of Cloud applications. Related work [(1)](https://criu.org/Main_Page).
 
 
 ### BSc-level projects.
@@ -108,8 +109,6 @@ These project have been completed and are no longer offered. If you find the top
 _
 
 * **[Performance evaluation of the new CPython JIT compiler].** The CPython engine is the most popular language VM for Python. In recent weeks, the engine was finally extended with a JIT compiler. In this project, we want to assess the performance impact of the new JIT, and want to understand what its properties and limitations are. Related: [(1)](https://github.com/python/cpython/pull/113465).
-
-* **[Combining CRIU and GraalVM native-image].** GraalVM native image is an open-source language technology that can be used to create optimized, cloud-ready binary executables for Java. By leveraging Ahead-of-time compilation of Java code, GraalVM native images can significantly reduce applications’ startup time, leading to reduced cold starts in Cloud deployments such as AWS Lambda. CRIU is an emerging technology provided by the Linux kernel aimed at the same goal: minimize applications startup time. Unlike GraalVM native image, CRIU leverages “user-space” snapshotting. In this project we want to explore how the two technologies can be combined in order to minimize even further the startup latency of Cloud applications. Related work [(1)](https://criu.org/Main_Page).
 
 * **[Hybrid compilation: combining JIT and AOT using GraalVM].** This project explores combining ahead-of-time compiled components (via Native Image) with JIT-compiled modules to achieve both fast startup and adaptive optimization. The student will design and evaluate hybrid execution setups for mixed workloads.
 
