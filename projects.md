@@ -10,6 +10,10 @@ My research interests are at the intersection of **Systems** and **Language runt
 
 All offered projects are challenging and require good systems programming and knowledge. I assume that at the Bachelor’s level you have taken (or you are familiar with some of the topics of) **Computer Organization**, **Advanced Systems Programming**, **Compiler Construction**, **Operating Systems**, and **Concurrency and Multithreading**. At the Master’s level, you have taken/or you are familiar with at least some of **Programming Large-Scale Parallel Systems**,  **Systems Seminar**, **Programming Multi-core and Many-core Systems**. Very good knowledge of Java, C, C++, Rust, or comparable languages is strongly recommended.
 
+#### Literature studies.
+
+Literature studies are often paired with a MSc thesis. In exceptional cases (e.g., a MSc thesis with industry) I am happy to supervise literature studies on all areas related to the BSc and MSc topics below.
+
 
 ### MSc-level projects.
 
@@ -19,12 +23,10 @@ _High performance data_
 
 * **[Parallel GPU-based data de-serialization].** Data de-serialization (e.g. of JSON data) remains a key bottleneck in many analytics workloads. This project investigates how to offload parsing to GPUs, implementing a prototype GPU-based parser for a popular data format (e.g., JSON) that can tokenize, structure, and analyze data in parallel, and comparing it against state-of-the-art CPU-based parsers.
 
-* **[NPU-assisted query execution].** Neural Processing Units (NPUs) are emerging hardware accelerators optimized for matrix operations. This project explores how to offload parts of query execution—such as joins or aggregations—to NPUs, leveraging their parallel computation model to accelerate analytical workloads.
+* **[NPU-assisted query execution].** Neural Processing Units (NPUs) are emerging hardware accelerators optimized for matrix operations. This project explores how to offload parts of query execution—such as joins or aggregations—to NPUs, leveraging their parallel computation model to accelerate analytical workloads. The project will target popular in-process database systems such as SQLlite or DuckDB.
 
-* **[Adaptive data encoding for Kafka streams].** The goal of this project is to develop an adaptive encoding framework for Kafka where the serialization format is chosen dynamically based on message characteristics (size, schema, or frequency). The student will design selection heuristics and evaluate trade-offs in latency and throughput.
-
-* **[SIMD acceleration for data analytics for Apache Spark].** Many data analytics operations such as filtering, aggregation, and string comparison can be vectorized using SIMD instructions. This project will explore how to exploit SIMD in Apache Spark SQL to speed up data processing kernels, and integrate them into a simple analytics pipeline.
-
+* **[Vectorized data analytics in Apache Spark SQL].** Recent versions of Java provide the Java Vector API, which enables portable and high-performance SIMD programming directly in Java. This project investigates how to integrate the Java Vector API into Spark’s query compilation pipeline, replacing scalar operators in generated code with vectorized implementations. The goal is to prototype end-to-end vectorized execution paths in Spark SQL and evaluate their performance benefits within a realistic analytics pipeline. [(1)](https://openjdk.org/jeps/448).
+[(2)](https://www.databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html).
 
 * **[Adaptive SQL compilation in Apache Spark].** Data processing systems such as Apache Spark perform runtime JIT compilation of SQL to machine code. Such compilation is typically static: once compiled, the code is never modified. In this project we want to instead explore “dynamic” compilation techniques in the context of Apache Spark SQL. Related work [(1)](https://www.databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html).
 
@@ -35,25 +37,26 @@ _High performance data_
 
 _VMs and compilers_
 
+* **[Runtime strings de-duplication].** Modern Java applications often maintain many duplicated String objects, wasting heap space and increasing GC pressure. Inspired by (1) and similar works (2), this project explores GC-level string de-duplication in GraalVM. The goal is to prototype a GC extension (or modified GC policy) that detects and coalesces duplicate string objects at runtime—e.g., via shared backing arrays, canonicalization tables, or region-based layouts—while preserving JVM semantics. The student will integrate the mechanism into GraalVM’s memory manager, evaluate its impact on memory usage, GC time, and application performance on realistic, string-heavy workloads, and compare against existing techniques such as string interning and application-level de-duplication.[(1)](https://dl-acm-org.vu-nl.idm.oclc.org/doi/10.1145/1449764.1449795) [(2)](https://mp7.watson.ibm.com/d2f57d950096a87e852575fa000a4345.html).
+
+* **[Stateful Incremental Compilation].** Incremental compilation traditionally requires compilers to be stateless, forcing them to reprocess large parts of the codebase after small edits. Inspired by (1) and similar work, this project explores how stateful compiler techniques could be applied within GraalVM’s JIT and AOT optimizing compilation pipelines. The goal is to prototype mechanisms that persist selected intermediate representations (IR graphs, profiling metadata, parse trees, etc) across compilations, enabling fine-grained reuse when methods or dependencies change. The project will design a dependency-tracking scheme, implement a reusable-state cache inside Graal, and measure improvements in compilation time, warm-up behavior, and overall responsiveness across dynamic workloads. [(1)](https://dl-acm-org.vu-nl.idm.oclc.org/doi/10.1109/CGO57630.2024.10444865) 
 
 * **[Accelerating Parsing and Lexing with SIMD and GPUs].** This project investigates how to speed up parsing and lexing for popular programming languages (e.g., C, C++, Java, JavaScript, Rust) using modern hardware accelerators such as SIMD units and GPUs. The goal is to design and implement prototype lexers/parsers that exploit data-parallelism in tokenization, scanning, and syntax analysis, while remaining compatible with existing compiler and tooling pipelines. The project will explore vectorized algorithms for character classification and token recognition, batch-oriented or streaming GPU kernels for large codebases, and hybrid CPU–GPU execution strategies. We will evaluate performance against state-of-the-art mainstream parsers on realistic workloads (compilation, static analysis, IDE features), quantifying speedups, energy implications, and integration overhead. The outcome is a set of acceleration techniques and a benchmarking framework that can guide the next generation of high-performance language front ends.
 
-* **[Compilation service for WebAssembly].** Modern WebAssembly runtimes such as wasmer provide in-process Just-in-time compilation. JIT compilers are normally running as a concurrent thread in the same process of the application. In this project we want to study an alternative runtime design, where the JIT compiler runs as an external “service”, i.e., in a different process, potentially running on a different machine. Such client-server design would allow to reduce even more the memory consumption of the WebAssembly runtime, as well as enable distributed code caching and other optimizations. Related work [(1)](https://github.com/wasmerio/wasmer).
-
 * **[Profile-guided inlining for WebAssembly].** Profile-guided optimization (PGO) is a compiler optimization technique where profiling information and runtime traces from previous execution of a given application are used to optimize future executions of the same application. The intuition is that the same application will most likely behave in the same way across multiple runs, with the consequence that knowledge from past runs can be used to optimize future executions. In this project, we want to explore the usage of PGO-style optimizations for WebAssembly, starting from function inlining. Related work [(1)](https://go.dev/doc/pgo).
+
+* **[GPU-assisted compilation].** Many modern compilers' extensible design allows exploring offloading parts of compilation to accelerators. This project investigates how certain compiler passes (e.g., SSA construction or data-flow analysis) could be parallelized or accelerated using a GPU-based backend.
 
 * **[Accelerated RexEx engines].** Regular expressions are natively supported in many high-level programming languages such as JavaScript, Java or Python. RegEx execution performance is often critical, and state-of-the-art langauge VMs employ advanced JIT compilation techniques or (SIMD) parallel processing to optimize RegEx performance. In this project we want to explore using accelerators (such as FPGAs, NPUs or others) to speed up RegEx matching performance. 
 
-* **[SIMD-based micro-optimizations for string data processing].** This project focuses on simple, well-defined SIMD use cases such as string scanning, predicate evaluation, or data compression. The goal is to implement CPU-vectorized routines using intrinsics and evaluate their performance against scalar baselines.
+* **[SIMD-based compiler optimizations for string data processing].** This project focuses on simple, well-defined SIMD use cases such as string operations (e.g., scanning, substrings, search). The goal is to implement new compiler optimizations that can leverage CPU-vectorized SIMD to speedup string-intensive managed languages such as Java or JavaScript.
 
-* **[Learned data structures in a language VM].** Learned data structures have been used successfully in the context of DataBase processing systems. In this project we want to explore using such data structures to implement some of the internal components of a modern language VM such as Google V8 or the Java Virtual Machine. Related work [(1)](https://arxiv.org/abs/1712.01208).
+* **[Compilation service for WebAssembly].** Modern WebAssembly runtimes such as wasmer provide in-process Just-in-time compilation. JIT compilers are normally running as a concurrent thread in the same process of the application. In this project we want to study an alternative runtime design, where the JIT compiler runs as an external “service”, i.e., in a different process, potentially running on a different machine. Such client-server design would allow to reduce even more the memory consumption of the WebAssembly runtime, as well as enable distributed code caching and other optimizations. Related work [(1)](https://github.com/wasmerio/wasmer).
 
+* **[CRIU for Native Image].** GraalVM native image is an open-source language technology that can be used to create optimized, cloud-ready binary executables for Java. By leveraging Ahead-of-time compilation of Java code, GraalVM native images can significantly reduce applications’ startup time, leading to reduced cold starts in Cloud deployments such as AWS Lambda. CRIU is an emerging technology provided by the Linux kernel aimed at the same goal: minimize applications startup time. Unlike GraalVM native image, CRIU leverages “user-space” snapshotting. In this project we want to explore how the two technologies can be combined in order to minimize even further the startup latency of Cloud applications. Related work [(1)](https://criu.org/Main_Page).
 
 * **[Extending Graal’s compiler pipeline with a custom optimization pass].** The Graal compiler framework allows adding new optimization phases. In this project, the student will implement a custom optimization (e.g., loop unrolling, constant folding, or dead code elimination) in Graal’s IR pipeline, evaluate its impact on performance, and visualize the transformation on benchmark programs.
 
-* **[GPU-assisted compilation using the Graal compiler].** Graal’s extensible design allows exploring offloading parts of compilation to accelerators. This project investigates how certain compiler passes (e.g., SSA construction or data-flow analysis) could be parallelized or accelerated using a GPU-based backend.
-
-* **[Combining CRIU and GraalVM native-image].** GraalVM native image is an open-source language technology that can be used to create optimized, cloud-ready binary executables for Java. By leveraging Ahead-of-time compilation of Java code, GraalVM native images can significantly reduce applications’ startup time, leading to reduced cold starts in Cloud deployments such as AWS Lambda. CRIU is an emerging technology provided by the Linux kernel aimed at the same goal: minimize applications startup time. Unlike GraalVM native image, CRIU leverages “user-space” snapshotting. In this project we want to explore how the two technologies can be combined in order to minimize even further the startup latency of Cloud applications. Related work [(1)](https://criu.org/Main_Page).
 
 
 ### BSc-level projects.
@@ -62,6 +65,8 @@ Depending on the topic, most of them can be extended to more challenging MSc-lev
 _High performance data_
 
 * **[Performance impact of serialization formats in Apache Kafka].** Apache Kafka supports multiple serialization formats such as Avro, Protocol Buffers, JSON, and MessagePack. This project investigates how the choice of serialization affects producer and consumer throughput, message latency, and CPU usage under different message sizes and workloads.
+
+* **[Adaptive data encoding for Kafka streams].** The goal of this project is to develop an adaptive encoding framework for Kafka where the serialization format is chosen dynamically based on message characteristics (size, schema, or frequency). The student will design selection heuristics and evaluate trade-offs in latency and throughput.
 
 * **[Monitoring and visualizing Kafka serialization performance].** This project focuses on developing a monitoring and visualization tool that measures serialization/deserialization overheads in Kafka pipelines. The student will instrument Kafka clients and build dashboards showing how data format, batch size, and schema evolution affect performance.
 
@@ -82,7 +87,8 @@ _VMs and compilers_
 
 * **[Performance analysis of SIMD support in WebAssembly].** SIMD instructions are at the core of modern data processing. For example, several data ingestion operations (e.g., importing data from a CSV file) requires UTF-8 validation: the input data needs to be analyzed (one character at a time) to ensure that the input text is valid. Parallel execution techniques can be employed to speed-up the validation of large text files. In this project, we want to explore the performance of existing WebAssembly runtimes in the context of SIMD execution, looking at common operations such as e.g. UTF-8 validation. The goal of the project is to implement multiple SIMD-based data processing  techniques targeting WebAssembly (either in WebAssembly itself, or by leveraging emscripten or alternative WASM compilers), to assess the current performance of WebAssembly in such Data-parallel operations. Related work [(1)](https://github.com/WebAssembly/simd/blob/main/proposals/simd/SIMD.md) [(2)](https://arxiv.org/abs/2010.03090).
 
-* **[Dynamic program analysis for WebAssembly].** WebAssembly is increasingly used beyond the browser, yet its runtime behavior remains less understood. This project will design a dynamic analysis tool for WebAssembly programs (e.g., to measure memory access, function calls, or execution time) and apply it to benchmark programs compiled from C/C++ or Rust.
+
+* **[Dynamic program analysis for WebAssembly].** WebAssembly is increasingly used beyond the browser, yet its runtime behavior remains less understood. This project will study and analyize existing dynamic analysis tools for WebAssembly programs (e.g., to measure memory access, function calls, or execution time) and apply them to benchmark programs compiled from C/C++ or Rust.
 
 * **[Performance analysis of the Java Vector API].** for JSON data processing applications. Upcoming versions of the Java language will feature built-in support for SIMD programming. Simdjson is one of the most popular high-performance JSON processing libraries; it is implemented in highly-optimized C code, and leverages advanced SIMD instructions to perform data de-serialization in parallel. Achieving similar performance using a managed programming language such as Java would be simply impossible without access to SIMD parallelism. The recently-introduced Java Vector API promises to bring high-performance SIMD parallel programming to the Java language. In this project we want to explore the usage of such a new API in the context of JSON data processing. In particular, the goal of the project is to implement the simdjson library using the new Java Vector API, and assess its performance profile compared against the native, highly-optimized simdjson implementation. Related work [(1)](https://github.com/simdjson/simdjson) [(2)](https://openjdk.org/jeps/460).
 
@@ -90,9 +96,6 @@ _VMs and compilers_
 
 
 
-#### Literature studies.
-
-Literature studies are often paired with a MSc thesis. In exceptional cases (e.g., a MSc thesis with industry) I am happy to supervise literature studies on all areas related to the BSc and MSc topics above.
 
 
 #### Past projects.
