@@ -6,7 +6,7 @@ I am an Assistant Professor in the Computer Science department at [VU Amsterdam]
 
 Before joining the VU, I was a Principal Researcher at the Virtual Machine Research Group at [Oracle labs](http://labs.oracle.com), and a member of the [GraalVM](https://github.com/graalvm) team. While at Oracle, I was a [delegate](https://github.com/tc39/notes/pull/77/files) member of ECMA [TC39](https://tc39.es/).
 
-Broadly speaking, I work on Programming Languages and Systems. I am especially intererested in all interactions between language VMs, Serverless applications, and Data analytics workloads. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering.
+Broadly speaking, I work on Programming Languages and Systems. I am especially intererested in all interactions between programming languages and data. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering. My interests includes VM internals, JIT compilation, query processing, data serialization, memory formats and layouts, GPU acceleration, and performance optimization in general.
 
 <!-- Broadly speaking, I work on language runtime systems and their interaction with other systems such as event-based server-side runtimes (like [Node.js](https://nodejs.org/en/)), data analytics framweworks (like [Spark](https://spark.apache.org/)), and other emerging cloud and data analytics platforms. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering.
 
