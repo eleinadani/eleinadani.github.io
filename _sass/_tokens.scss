@@ -1,24 +1,20 @@
 /* ---------------------------------------------------------------
    Design tokens. Everything visual is expressed in terms of these,
-   so a change of accent colour or measure happens in one place.
+   so a change of typeface, accent or measure happens in one place.
    --------------------------------------------------------------- */
 
 :root {
-    /* Type. The site is deliberately single-face: Inconsolata sets the
-       body copy as well as the name, navigation, labels and metadata,
-       which is what gives it one voice from top to bottom.
-       To reintroduce a separate reading face later, point --font-body
-       at a text stack instead, e.g.
-         --font-body: Charter, "Iowan Old Style", Cambria, Georgia, serif;
-       and raise --size-body to ~17.5px / --leading-body to 1.65. */
-    --font-mono: "Inconsolata", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --font-body: var(--font-mono);
+    /* Type. The site is single-face: one serif sets the body copy, the
+       name, the navigation and the section labels, which is what gives
+       it one voice from top to bottom. Hierarchy comes from size,
+       weight, case and colour -- never from a second typeface.
+       --font-mono is for inline code and nothing else. */
+    --font-body: "Source Serif 4", Charter, "Bitstream Charter", Cambria, Georgia, serif;
+    --font-label: var(--font-body);
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-    /* Monospace sets wider than a text face at the same nominal size,
-       so the body size is smaller and the leading looser than a serif
-       setting would want. */
-    --size-body: 15.5px;
-    --leading-body: 1.72;
+    --size-body: 17.5px;
+    --leading-body: 1.6;
 
     /* Ink */
     --ink: #1b1b1f;

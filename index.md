@@ -14,7 +14,7 @@ description: >-
 
 <p class="affiliation">
 <strong>Assistant Professor</strong>, Computer Science &mdash; <a href="https://vu.nl/en/about-vu/faculties/faculty-of-science/departments/computer-science">VU Amsterdam</a><br>
-<span class="also">(part-time) &mdash; <a href="https://www.tue.nl/en/research/research-groups/data-science/data-and-artificial-intelligence/database-group/">TU Eindhoven</a></span><br>
+<strong>Assistant Professor</strong> (part-time) &mdash; <a href="https://www.tue.nl/en/research/research-groups/data-science/data-and-artificial-intelligence/database-group/">TU Eindhoven</a><br>
 NU building 11A-43, De Boelelaan 1111, 1081 HV Amsterdam
 </p>
 

@@ -13,11 +13,11 @@
 
 /* Section labels match the h2 device used on the prose pages. */
 .home h2 {
-    font-family: var(--font-mono);
-    font-size: 12.5px;
+    font-family: var(--font-label);
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     color: var(--muted);
     margin: 0 0 18px;
     padding-top: 26px;
@@ -30,8 +30,8 @@
 
 /* Trailing "read more" line under a section. */
 .home .more {
-    font-family: var(--font-mono);
-    font-size: 14px;
+    font-family: var(--font-label);
+    font-size: 15px;
     margin: 18px 0 0;
 }
 
@@ -58,26 +58,24 @@
 }
 
 .home .affiliation {
-    font-family: var(--font-mono);
-    font-size: 15px;
-    line-height: 1.75;
+    font-family: var(--font-label);
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--muted);
     margin: 0 0 18px;
 }
 
-/* The part-time line hangs under the first, so the role is not repeated.
-   20ch matches the width of the label above it in the mono face. */
-.home .affiliation .also {
-    padding-left: 20ch;
-}
+/* Each affiliation is a full line of its own. An earlier version hung the
+   second line under the first with `padding-left: 20ch`, which only lines
+   up in a monospace face -- in a proportional one it aligns with nothing. */
 
 .home .affiliation strong {
     color: var(--ink);
 }
 
 .home .elsewhere {
-    font-family: var(--font-mono);
-    font-size: 14px;
+    font-family: var(--font-label);
+    font-size: 15.5px;
     line-height: 1.9;
     color: var(--muted);
     margin: 0 0 32px;
@@ -104,15 +102,15 @@
     display: flex;
     gap: 18px;
     margin: 0 0 14px;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16.5px;
+    line-height: 1.55;
 }
 
 .home .news .when {
     flex: 0 0 108px;
     padding-top: 0.15em;
-    font-family: var(--font-mono);
-    font-size: 13.5px;
+    font-family: var(--font-label);
+    font-size: 14.5px;
     color: var(--muted);
     white-space: nowrap;
 }
@@ -137,8 +135,8 @@
 }
 
 .home .card h3 {
-    font-family: var(--font-mono);
-    font-size: 14.5px;
+    font-family: var(--font-label);
+    font-size: 16.5px;
     font-weight: 700;
     line-height: 1.35;
     color: var(--ink);
@@ -146,8 +144,8 @@
 }
 
 .home .card p {
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 15.5px;
+    line-height: 1.5;
     color: var(--ink-soft);
     margin: 0;
 }
@@ -168,8 +166,8 @@
 .home .courses .where {
     display: block;
     margin-top: 2px;
-    font-family: var(--font-mono);
-    font-size: 13.5px;
+    font-family: var(--font-label);
+    font-size: 15px;
     color: var(--muted);
 }
 
@@ -179,15 +177,15 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px 28px;
-    font-size: 15px;
+    font-size: 16.5px;
 }
 
 .home .contact-grid .label {
     margin: 0 0 5px;
-    font-family: var(--font-mono);
-    font-size: 12px;
+    font-family: var(--font-label);
+    font-size: 12.5px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--muted);
 }
 
@@ -199,10 +197,6 @@
 /* Narrow --------------------------------------------------------- */
 
 @media (max-width: 620px) {
-    .home .affiliation .also {
-        padding-left: 0;
-    }
-
     .home .portrait {
         float: none;
         margin: 0 0 20px;
