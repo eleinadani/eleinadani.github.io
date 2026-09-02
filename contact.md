@@ -1,6 +1,5 @@
 ---
 layout: default
-is_contact: true
 ---
 
 ## email
@@ -12,9 +11,9 @@ is_contact: true
 
 ## social
 
-[linkedin](https://www.linkedin.com/in/daniele-bonetta-2478333)
+[LinkedIn](https://www.linkedin.com/in/daniele-bonetta-2478333)
 
-[Twitter/x](https://twitter.com/eleinadani)
+[Twitter/X](https://twitter.com/eleinadani)
 
 
 ---

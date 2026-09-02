@@ -1,0 +1,211 @@
+/* ---------------------------------------------------------------
+   Long-form pages: research, teaching, projects, contact.
+   Everything is Inconsolata, so hierarchy is carried by size,
+   weight, case and colour rather than by a change of face.
+   --------------------------------------------------------------- */
+
+.content p {
+    margin: 0 0 1.05em;
+}
+
+.content > :first-child {
+    margin-top: 0;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    text-wrap: balance;
+}
+
+.content h1 {
+    font-family: var(--font-mono);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+}
+
+/* Section label: small mono caps sitting under a hairline rule.
+   This is the same device the homepage uses, so the two match. */
+.content h2 {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin: 46px 0 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+}
+
+.content > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.content h3 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 32px 0 10px;
+}
+
+/* Single-face setting, so h4 sits at body size and is distinguished by
+   weight alone - smaller than the body copy would read as a caption. */
+.content h4 {
+    font-size: var(--size-body);
+    font-weight: 700;
+    color: var(--ink);
+    margin: 26px 0 8px;
+}
+
+.content h5,
+.content h6 {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 22px 0 8px;
+}
+
+/* The pages carry a lot of `---` separators; keep them quiet, since
+   the h2 rule already does most of the dividing. */
+.content hr {
+    margin: 34px 0;
+}
+
+/* A `---` immediately before a section label would double the rule,
+   since the label draws its own. Drop the redundant one. */
+.content hr:has(+ h2) {
+    display: none;
+}
+
+/* Lists ---------------------------------------------------------- */
+
+.content ul {
+    margin: 14px 0;
+    padding-left: 22px;
+}
+
+.content ul > li {
+    margin: 9px 0;
+}
+
+.content ul > li::marker {
+    color: var(--faint);
+}
+
+/* Ordered lists are numbered [1], [2], ... — they read as citations,
+   which is how they are used on these pages. */
+.content ol {
+    counter-reset: list;
+    list-style: none;
+    margin: 14px 0;
+    padding-left: 36px;
+}
+
+.content ol > li {
+    position: relative;
+    margin: 9px 0;
+}
+
+.content ol > li::before {
+    content: "[" counter(list, decimal) "]";
+    counter-increment: list;
+    position: absolute;
+    left: -36px;
+    top: 0.08em;
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    color: var(--muted);
+}
+
+.content li > ul,
+.content li > ol {
+    margin: 8px 0;
+}
+
+/* kramdown wraps the items of a "loose" list (blank lines between
+   items, which these pages use) in <p>. Without this the paragraph
+   margin is added inside every bullet. */
+.content li > p:first-child {
+    margin-top: 0;
+}
+
+.content li > p:last-child {
+    margin-bottom: 0;
+}
+
+/* Quotes --------------------------------------------------------- */
+
+.content blockquote {
+    margin: 22px 0;
+    padding: 2px 0 2px 18px;
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-soft);
+}
+
+.content blockquote p {
+    margin: 4px 0;
+}
+
+/* Tables --------------------------------------------------------- */
+
+.content table {
+    width: 100%;
+    margin: 22px 0;
+    border-collapse: collapse;
+    font-size: 14.5px;
+}
+
+.content th,
+.content td {
+    border-bottom: 1px solid var(--rule);
+    padding: 9px 12px 9px 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.content th {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule-strong);
+}
+
+.content tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* A floated portrait for prose pages that want one. */
+.content .profile-picture {
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin: 4px 0 18px 30px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+@media (max-width: 560px) {
+    .content .profile-picture {
+        float: none;
+        margin: 0 0 20px;
+    }
+
+    .content table {
+        display: block;
+        overflow-x: auto;
+    }
+}

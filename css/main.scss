@@ -1,3 +1,13 @@
 ---
+# Front matter is required: it is what makes Jekyll run this file
+# through Sass and emit css/main.css.
 ---
-@import "style";
+
+// Order matters: tokens define the custom properties everything else
+// reads, and later partials are allowed to override earlier ones.
+// @use rather than @import -- Dart Sass deprecates @import.
+@use "tokens";
+@use "base";
+@use "layout";
+@use "prose";
+@use "home";

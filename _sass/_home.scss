@@ -1,0 +1,229 @@
+/* ---------------------------------------------------------------
+   The one-page homepage. Scoped under .home so nothing here can
+   leak into the long-form pages.
+   --------------------------------------------------------------- */
+
+.home > section {
+    margin-bottom: 44px;
+}
+
+.home > section:last-child {
+    margin-bottom: 0;
+}
+
+/* Section labels match the h2 device used on the prose pages. */
+.home h2 {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin: 0 0 18px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+}
+
+.home p {
+    margin: 0 0 1.05em;
+}
+
+/* Trailing "read more" line under a section. */
+.home .more {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    margin: 18px 0 0;
+}
+
+/* Intro ---------------------------------------------------------- */
+
+.home .intro {
+    padding-bottom: 8px;
+}
+
+/* The portrait is floated so the opening paragraphs wrap around it.
+   A grid here reserves a full-width band for a 168px image and leaves
+   a conspicuous hole to the left of it. */
+.home .portrait {
+    float: right;
+    margin: 4px 0 18px 34px;
+}
+
+.home .portrait img {
+    display: block;
+    width: 168px;
+    height: 168px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.home .affiliation {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin: 0 0 18px;
+}
+
+/* The part-time line hangs under the first, so the role is not repeated.
+   20ch matches the width of the label above it in the mono face. */
+.home .affiliation .also {
+    padding-left: 20ch;
+}
+
+.home .affiliation strong {
+    color: var(--ink);
+}
+
+.home .elsewhere {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin: 0 0 32px;
+}
+
+.home .elsewhere a {
+    white-space: nowrap;
+}
+
+.home .elsewhere .sep {
+    color: var(--faint);
+    padding: 0 4px;
+}
+
+/* News ----------------------------------------------------------- */
+
+.home .news {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.home .news li {
+    display: flex;
+    gap: 18px;
+    margin: 0 0 14px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.home .news .when {
+    flex: 0 0 108px;
+    padding-top: 0.15em;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.home .news .what em {
+    color: var(--muted);
+}
+
+/* Ongoing work cards -------------------------------------------- */
+
+.home .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.home .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 18px 17px;
+}
+
+.home .card h3 {
+    font-family: var(--font-mono);
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 0 7px;
+}
+
+.home .card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+/* Teaching ------------------------------------------------------- */
+
+.home .courses {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.home .courses li {
+    margin: 0 0 13px;
+    line-height: 1.45;
+}
+
+.home .courses .where {
+    display: block;
+    margin-top: 2px;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--muted);
+}
+
+/* Contact -------------------------------------------------------- */
+
+.home .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 28px;
+    font-size: 15px;
+}
+
+.home .contact-grid .label {
+    margin: 0 0 5px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.home .contact-grid p {
+    margin: 0 0 3px;
+    line-height: 1.5;
+}
+
+/* Narrow --------------------------------------------------------- */
+
+@media (max-width: 620px) {
+    .home .affiliation .also {
+        padding-left: 0;
+    }
+
+    .home .portrait {
+        float: none;
+        margin: 0 0 20px;
+    }
+
+    .home .portrait img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .home .news li {
+        display: block;
+    }
+
+    .home .news .when {
+        display: block;
+        margin-bottom: 1px;
+    }
+
+    .home .cards,
+    .home .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

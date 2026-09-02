@@ -1,0 +1,90 @@
+/* ---------------------------------------------------------------
+   Element defaults: the look of raw text, links and rules before
+   any page-specific layout is applied.
+   --------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    line-height: var(--leading-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+hr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 40px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: var(--font-mono);
+    font-size: 0.94em;
+}
+
+code {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.05em 0.32em;
+}
+
+pre {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+pre code {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+::selection {
+    background: var(--accent-wash);
+}

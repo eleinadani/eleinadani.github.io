@@ -1,0 +1,43 @@
+/* ---------------------------------------------------------------
+   Design tokens. Everything visual is expressed in terms of these,
+   so a change of accent colour or measure happens in one place.
+   --------------------------------------------------------------- */
+
+:root {
+    /* Type. The site is deliberately single-face: Inconsolata sets the
+       body copy as well as the name, navigation, labels and metadata,
+       which is what gives it one voice from top to bottom.
+       To reintroduce a separate reading face later, point --font-body
+       at a text stack instead, e.g.
+         --font-body: Charter, "Iowan Old Style", Cambria, Georgia, serif;
+       and raise --size-body to ~17.5px / --leading-body to 1.65. */
+    --font-mono: "Inconsolata", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --font-body: var(--font-mono);
+
+    /* Monospace sets wider than a text face at the same nominal size,
+       so the body size is smaller and the leading looser than a serif
+       setting would want. */
+    --size-body: 15.5px;
+    --leading-body: 1.72;
+
+    /* Ink */
+    --ink: #1b1b1f;
+    --ink-soft: #3a3a42;
+    --muted: #6b6b76;
+    --faint: #9a9aa4;
+
+    /* Accent */
+    --accent: #3a4a8c;
+    --accent-strong: #26326a;
+    --accent-wash: #dfe3f3;
+
+    /* Surfaces and rules */
+    --bg: #fff;
+    --surface: #fafafa;
+    --rule: #e6e6ec;
+    --rule-strong: #d3d3dc;
+
+    /* Measure: 720px of content once the gutter is subtracted */
+    --measure: 768px;
+    --gutter: 24px;
+}

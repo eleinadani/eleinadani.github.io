@@ -29,7 +29,7 @@ At VU Amsterdam, I regularly offer Bachelor and Master thesis projects. In addit
 
 The following are very useful links for prospective students interested in working under my supervision:
 
-* Animesh Trivedi's _excellent_ advice on [CS BSc. and MSc. Thesis](https://animeshtrivedi.github.io/thesis-content-advice/) and [tesis-related resources](https://animeshtrivedi.github.io/thesis-resources/).
+* Animesh Trivedi's _excellent_ advice on [CS BSc. and MSc. Thesis](https://animeshtrivedi.github.io/thesis-content-advice/) and [thesis-related resources](https://animeshtrivedi.github.io/thesis-resources/).
 
 * Animesh Trivedi's _excellent_ advice on [writing a survey](https://animeshtrivedi.github.io/lit-study/).
 

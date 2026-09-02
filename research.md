@@ -6,7 +6,7 @@ I am an Assistant Professor in the Computer Science department at [VU Amsterdam]
 
 Before joining the VU, I was a Principal Researcher at the Virtual Machine Research Group at [Oracle labs](http://labs.oracle.com), and a member of the [GraalVM](https://github.com/graalvm) team. While at Oracle, I was a [member](https://github.com/tc39/notes/pull/77/files) of ECMA [TC39](https://tc39.es/).
 
-Broadly speaking, I work on Programming Languages and Systems. I am especially intererested in all interactions between programming languages and data. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering. My interests includes VM internals, JIT compilation, query processing, data serialization, memory formats and layouts, GPU acceleration, and performance optimization in general.
+Broadly speaking, I work on Programming Languages and Systems. I am especially interested in all interactions between programming languages and data. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering. My interests includes VM internals, JIT compilation, query processing, data serialization, memory formats and layouts, GPU acceleration, and performance optimization in general.
 
 <!-- Broadly speaking, I work on language runtime systems and their interaction with other systems such as event-based server-side runtimes (like [Node.js](https://nodejs.org/en/)), data analytics framweworks (like [Spark](https://spark.apache.org/)), and other emerging cloud and data analytics platforms. I am interested in all aspects of such interactions, from programming models design to runtime optimization and performance engineering.
 
@@ -17,7 +17,7 @@ I hold a Ph.D. from [USI Lugano](http://www.inf.usi.ch). I did research internsh
 
 An updated list of my publications can be found on [Google Scholar](https://scholar.google.com/citations?user=AR2pK8QAAAAJ).
 
-### Perspective students
+### Prospective students
 
 We are always looking for excellent Ph.D students to join us. If you are interested in joining our group send me an email with your CV, research interests, and why you think there is a good match with our ongoing research.
 
