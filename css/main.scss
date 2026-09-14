@@ -5,9 +5,11 @@
 
 // Order matters: tokens define the custom properties everything else
 // reads, and later partials are allowed to override earlier ones.
-// @use rather than @import -- Dart Sass deprecates @import.
-@use "tokens";
-@use "base";
-@use "layout";
-@use "prose";
-@use "home";
+// @import, not @use: GitHub Pages builds with Jekyll 3.10 / Ruby Sass 3.7,
+// which predates @use. Dart Sass prints a deprecation notice locally; the
+// compiled CSS is byte-identical either way.
+@import "tokens";
+@import "base";
+@import "layout";
+@import "prose";
+@import "home";
