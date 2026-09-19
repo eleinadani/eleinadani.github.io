@@ -43,6 +43,7 @@ team, where I also served on ECMA [TC39](https://tc39.es/). I hold a Ph.D. from
 -->
 
 <ul class="news">
+  <li><span class="when">VLDB 2026</span><span class="what"><em>High-throughput JSONPath Query Execution on Neural Processing Units</em>. Evaluating JSONPath queries on AMD&rsquo;s XDNA NPU instead of the CPU.</span></li>
   <li><span class="when">OOPSLA 2026</span><span class="what"><em>TwinString: Preserving string semantics with off-heap data on the JVM</em>. Keeping Java&rsquo;s String semantics intact while the characters live off the heap.</span></li>
   <li><span class="when">ICSME 2026</span><span class="what"><em>Unavailable, Undocumented, or Unbuildable: A Reproducibility Study of WebAssembly Benchmarks</em>. How many published WebAssembly benchmarks can still be obtained, understood and built.</span></li>
   <li><span class="when">OOPSLA 2025</span><span class="what"><em>HeapBuffers: Why Not Just Using a Binary Serialization Format for Your Managed Memory?</em> Using a binary serialization format as the layout of managed memory itself.</span></li>
